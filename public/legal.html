@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos Legales | Password Generator by Nexwey</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+            --link-color: #0056b3;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        nav button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        nav button:hover {
+            background-color: #003d82;
+        }
+        nav button.active {
+            background-color: #003d82;
+        }
+        .content {
+            padding: 20px;
+        }
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            padding: 1rem;
+            background-color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Términos Legales</h1>
+            <p>Password Generator by Nexwey</p>
+        </header>
+
+        <nav>
+            <button id="privacyBtn" class="active">Política de Privacidad</button>
+            <button id="termsBtn">Términos de Uso</button>
+        </nav>
+
+        <div id="privacyContent" class="content">
+            <h2>Política de Privacidad</h2>
+            <p><strong>Última actualización:</strong> <span id="privacyDate"></span></p>
+
+            <p>Bienvenido a <strong>Password Generator by Nexwey</strong>. La privacidad de nuestros usuarios es nuestra prioridad. Queremos asegurarte que ninguna contraseña generada es almacenada en nuestros servidores.</p>
+
+            <h3>1. Información que Recopilamos</h3>
+            <p><strong>Password Generator by Nexwey</strong> no recopila, almacena ni comparte información personal. Todas las contraseñas generadas se manejan exclusivamente en el dispositivo del usuario y no se transmiten a servidores externos.</p>
+
+            <h3>2. Uso de la Información</h3>
+            <p>Dado que no recopilamos información personal, no utilizamos ni compartimos datos con terceros.</p>
+
+            <h3>3. Seguridad</h3>
+            <p>Las contraseñas generadas se mantienen de forma local en tu dispositivo. Sin embargo, te recomendamos tomar medidas adicionales para proteger tus credenciales, como el uso de un gestor de contraseñas seguro.</p>
+
+            <h3>4. Cambios en la Política de Privacidad</h3>
+            <p>Podemos actualizar esta política en cualquier momento. Cualquier cambio será publicado en esta misma sección.</p>
+        </div>
+
+        <div id="termsContent" class="content" style="display:none;">
+            <h2>Términos de Uso</h2>
+            <p><strong>Última actualización:</strong> <span id="termsDate"></span></p>
+
+            <p>Al utilizar <strong>Password Generator by Nexwey</strong>, aceptas los siguientes términos y condiciones.</p>
+
+            <h3>1. Uso de la Aplicación</h3>
+            <p><strong>Password Generator by Nexwey</strong> es una herramienta para generar contraseñas seguras. El uso de la aplicación es responsabilidad del usuario. No garantizamos la recuperación de contraseñas perdidas.</p>
+
+            <h3>2. Almacenamiento de Datos</h3>
+            <p>No almacenamos ni transmitimos contraseñas generadas a ningún servidor. Toda la información se maneja de manera local en tu dispositivo.</p>
+
+            <h3>3. Responsabilidad</h3>
+            <p>No nos hacemos responsables de pérdidas, daños o accesos no autorizados a las contraseñas generadas. Es responsabilidad del usuario almacenar y gestionar sus credenciales de manera segura.</p>
+
+            <h3>4. Cambios en los Términos</h3>
+            <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Las actualizaciones se reflejarán en esta página.</p>
+        </div>
+
+        <footer>
+            <p>Si tienes preguntas sobre estos términos legales, contáctanos en <a href="mailto:soporte@nexwey.com">soporte@nexwey.com</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        const privacyBtn = document.getElementById('privacyBtn');
+        const termsBtn = document.getElementById('termsBtn');
+        const privacyContent = document.getElementById('privacyContent');
+        const termsContent = document.getElementById('termsContent');
+        const privacyDate = document.getElementById('privacyDate');
+        const termsDate = document.getElementById('termsDate');
+
+        // Set current date for both sections
+        const currentDate = new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+        privacyDate.textContent = currentDate;
+        termsDate.textContent = currentDate;
+
+        privacyBtn.addEventListener('click', () => {
+            privacyContent.style.display = 'block';
+            termsContent.style.display = 'none';
+            privacyBtn.classList.add('active');
+            termsBtn.classList.remove('active');
+        });
+
+        termsBtn.addEventListener('click', () => {
+            privacyContent.style.display = 'none';
+            termsContent.style.display = 'block';
+            termsBtn.classList.add('active');
+            privacyBtn.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
