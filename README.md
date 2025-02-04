@@ -17,10 +17,10 @@
 ## Capturas de pantalla
 
 ### Generador de Contraseñas
-![Generador de Contraseñas](https://via.placeholder.com/800x400?text=Password+Generator+Screenshot)
+![Generador de Contraseñas](./generator.png)
 
 ### Contraseñas Guardadas
-![Contraseñas Guardadas](https://via.placeholder.com/800x400?text=Saved+Passwords+Screenshot)
+![Contraseñas Guardadas](./save-passwords.png)
 
 ---
 
@@ -37,7 +37,7 @@ Antes de ejecutar este proyecto, asegúrate de tener instalado lo siguiente:
 
 1. Clona este repositorio:
    ```
-   git clone https://github.com/tu-usuario/password-generator.git
+   git clone https://github.com/RobertoPantojaL/password-generator.git
    cd password-generator
    ```
 2. Instala las dependencias:
@@ -48,7 +48,7 @@ Antes de ejecutar este proyecto, asegúrate de tener instalado lo siguiente:
    ```
    npm run dev
    ```
-4. Abre tu navegador y visita http://localhost:5173
+4. Abre tu navegador y visita http://localhost:5173 o el que te proporcione **vite**
 ---
 ## Uso
 
